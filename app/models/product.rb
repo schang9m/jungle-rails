@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   monetize :price_cents, numericality: true
   mount_uploader :image, ProductImageUploader
+  has_many :line_items
 
   belongs_to :category
 
