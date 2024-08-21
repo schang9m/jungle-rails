@@ -7,8 +7,9 @@
     </h1>
   <% end%>
   <div>
+  <h2 class="soldout <%= 'show' if product.quantity.zero? %>">Sold Out</h2>
     <%= button_to add_item_cart_path(product_id: product.id), class: 'btn' ,
-    method: :post do %>
+    method: :post, disabled: product.quantity.zero? do %>
       <%= fa_icon "shopping-cart", text: 'Add' %> 
     <% end %>
   </div>

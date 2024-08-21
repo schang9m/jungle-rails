@@ -69,6 +69,9 @@
         &.low-stock {
           color: red; // Color for quantity when less than 10
         }
+        &.hide {
+          display: none;
+        }
       }
       .product_quantity,
       .product_price {

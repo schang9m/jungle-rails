@@ -9,17 +9,19 @@
       <h1><%= @product.name %></h1>
       <p><%= @product.description %></p>
       <div class="quantity">
-        <div class="product_quantity <%= 'low-stock' if @product.quantity < 10 %>">
+        <div class="product_quantity <%= 'low-stock' if @product.quantity < 10 %>
+        <%= 'hide' if @product.quantity.zero? %>">
           <%= @product.quantity %>
           <span> in stock at </span>
-        </div>
-        <span class="product_price"><%= formatted_currency(@product.price) %></span>
+          </div>
+        <h2 class="soldout <%= 'show' if @product.quantity.zero? %>">Sold Out</h2>         
+      <span class="product_price"><%= formatted_currency(@product.price) %></span>
       </div>
-      <div class="price">          
-        <%= button_to add_item_cart_path(product_id: @product.id), class: 'btn' , method: :post do %>
+      <div class="price"> 
+        <%= button_to add_item_cart_path(product_id: @product.id), class: 'btn' , method: :post, disabled: @product.quantity.zero? do %>
           <%= fa_icon "shopping-cart", text: 'Add' %>
         <% end %>          
-      </div>
+        </div>
     </div>
   </article>
 
