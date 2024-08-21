@@ -9,4 +9,18 @@
     background: rgba(0, 130, 29, 0.7);
     color: white;
   }
+  .panel {
+    .table {
+      .total_price {
+        font-family: "Montserrat";
+        color: rgba(113, 255, 145, 0.7);
+        font-size: 13pt;
+      }
+      .table_price {
+        font-family: "Montserrat";
+        color: rgba(113, 255, 145, 0.7);
+        font-size: 13pt;
+      }
+    }
+  }
 }
