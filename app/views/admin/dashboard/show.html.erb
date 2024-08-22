@@ -1,2 +1,39 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<h1 class="my-4">Admin Dashboard</h1>
+
+<section class="categories-show mb-5">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <h2>Category</h2>
+        <p class="lead">
+          <%= pluralize(@category.size, 'categories') %>
+        </p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <a href="<%= root_path %>" class="btn btn-primary">
+          View All Products
+        </a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            Items
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">
+              <%= @products.size %>
+            </h3>
+            <p class="card-text">
+              <a href="<%= admin_products_path %>" class="btn btn-secondary">
+                Manage Products
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

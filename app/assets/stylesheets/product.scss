@@ -99,7 +99,7 @@
     .soldout {
       width: 140px;
       margin: 1em 0;
-      display: inline-block;
+      display: none;
       background: rgba(224, 14, 14, 0.8);
       border: 1px solid rgba(224, 14, 14, 0.8);
       border-radius: 0.25em;
@@ -110,6 +110,9 @@
       color: white;
       font-weight: 700;
       text-align: center;
+      &.show {
+        display: inline-block;
+      }
     }
   }
 }

@@ -13,7 +13,7 @@
         <%= 'hide' if @product.quantity.zero? %>">
           <%= @product.quantity %>
           <span> in stock at </span>
-          </div>
+        </div>
         <h2 class="soldout <%= 'show' if @product.quantity.zero? %>">Sold Out</h2>         
       <span class="product_price"><%= formatted_currency(@product.price) %></span>
       </div>
