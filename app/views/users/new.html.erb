@@ -1,13 +1,43 @@
-<h1>Signup!</h1>
+<h1 class="text-center mb-4">Signup</h1>
 
 <%= form_for :user, url: '/users' do |f| %>
-  <div class="name">
-    First Name: <%= f.text_field :first_name %>
-    Last Name: <%= f.text_field :last_name %>
-  </div>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
+  <div class="container">
+    <div class="row">
 
+      <!-- First Name Field -->
+      <div class="col-md-6 mb-3">
+        <%= f.label :first_name, 'First Name:', class: 'form-label' %>
+        <%= f.text_field :first_name, class: 'form-control', placeholder: 'John' %>
+      </div>
+
+      <!-- Last Name Field -->
+      <div class="col-md-6 mb-3">
+        <%= f.label :last_name, 'Last Name:', class: 'form-label' %>
+        <%= f.text_field :last_name, class: 'form-control', placeholder: 'Smith' %>
+      </div>
+
+      <!-- Email Field -->
+      <div class="col-md-12 mb-3">
+        <%= f.label :email, 'Email Address:', class: 'form-label' %>
+        <%= f.email_field :email, class: 'form-control', placeholder: 'example@example.com' %>
+      </div>
+
+      <!-- Password Field -->
+      <div class="col-md-12 mb-3">
+        <%= f.label :password, 'Password:', class: 'form-label' %>
+        <%= f.password_field :password, class: 'form-control', placeholder: '••••••••' %>
+      </div>
+
+      <!-- Password Confirmation Field -->
+      <div class="col-md-12 mb-3">
+        <%= f.label :password_confirmation, 'Confirm Password:', class: 'form-label' %>
+        <%= f.password_field :password_confirmation, class: 'form-control', placeholder: '••••••••' %>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="col-md-12">
+        <%= f.submit "Sign Up", class: 'btn btn-primary w-100' %>
+      </div>
+    </div>
+  </div>
 <% end %>
