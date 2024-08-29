@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, if: -> { password.present? }
 
   validate :passwords_match
-
+  has_many :orders
   def self.authenticate_with_credentials(email, password)
     # Normalize the email (e.g., downcase)
     normalized_email = email.strip.downcase
